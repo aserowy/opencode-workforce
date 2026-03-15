@@ -1,6 +1,6 @@
 # User Story: Replace scripts with custom tools
 - ID: US-0008
-- Status: plan
+- Status: execution
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
 - I want: requirements discovery and status scripts replaced by custom tools
