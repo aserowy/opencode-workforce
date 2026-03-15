@@ -7,8 +7,9 @@
 #
 # Behavior:
 # - Creates the destination directory if missing.
-# - Mirrors each source directory by replacing the destination directory.
-# - Removes destination directories when the source is absent.
+# - Updates repo-defined items by copying into existing directories.
+# - Preserves custom items that are not defined in this repository.
+# - Does not remove destination directories when the source is absent.
 # - Idempotent: repeated runs produce the same end state.
 # - No sudo usage.
 
@@ -25,15 +26,12 @@ sync_dir() {
   dest="$dest_root/$name"
 
   if [ -d "$src" ]; then
-    if [ -e "$dest" ]; then
-      rm -rf "$dest"
-    fi
     mkdir -p "$dest_root"
-    cp -R "$src" "$dest"
-  else
-    if [ -e "$dest" ]; then
-      rm -rf "$dest"
+    if [ -e "$dest" ] && [ ! -d "$dest" ]; then
+      rm -f "$dest"
     fi
+    mkdir -p "$dest"
+    cp -R "$src/." "$dest/"
   fi
 }
 

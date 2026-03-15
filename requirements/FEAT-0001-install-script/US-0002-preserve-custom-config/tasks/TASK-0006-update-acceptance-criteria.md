@@ -1,7 +1,7 @@
 # Task: Update acceptance criteria for preservation behavior
 
 - ID: TASK-0006
-- Status: plan
+- Status: done
 
 ## Description
 Ensure acceptance criteria and any related requirement notes reflect the decision to preserve everything once installed, with no deletions of repo-removed items.
@@ -14,3 +14,7 @@ Ensure acceptance criteria and any related requirement notes reflect the decisio
 ## Acceptance Criteria
 - Acceptance criteria explicitly state no deletions of repo-removed items.
 - Story scope remains consistent with preservation decision.
+
+## Notes
+- Added acceptance criteria in story to preserve items removed from repo.
+- Updated story scope to reiterate non-deletion rule.

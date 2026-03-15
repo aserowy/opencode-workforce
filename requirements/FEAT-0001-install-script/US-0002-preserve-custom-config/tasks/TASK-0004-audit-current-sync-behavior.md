@@ -1,7 +1,7 @@
 # Task: Audit current install sync behavior for deletions
 
 - ID: TASK-0004
-- Status: plan
+- Status: done
 
 ## Description
 Review the existing install.sh expectations and any documented behavior to identify where deletions or cleanups might occur, then capture required adjustments to preserve all user-created items.
@@ -14,3 +14,8 @@ Review the existing install.sh expectations and any documented behavior to ident
 ## Acceptance Criteria
 - A concise summary lists any existing delete/cleanup assumptions and the updated non-deletion rule.
 - Impacted paths are enumerated for follow-on design work.
+
+## Notes
+- Current behavior removes destination directories via rm -rf and deletes when sources are absent.
+- Updated rule: do not delete items under ~/.config/opencode even if missing from repo.
+- Impacted paths: ~/.config/opencode/agents, ~/.config/opencode/skills, ~/.config/opencode/commands.
