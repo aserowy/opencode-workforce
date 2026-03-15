@@ -1,17 +1,17 @@
-# User Story: Define Requirements ID Rules and Scripts
+# User Story: Define Requirements ID Rules and Tools
 - ID: US-0005
 - Status: done
 - Feature: FEAT-0003
 - As a: requirements maintainer
-- I want: documented ID generation rules and scripts for listing open requirements artifacts
+- I want: documented ID generation rules and tools for listing open requirements artifacts
 - So that: I can assign IDs consistently and quickly find in-progress requirements
 - Acceptance criteria:
   - Given I need a new FEAT, US, or TASK ID
   - When I follow the documented ID rules
   - Then I can select the next sequential ID for that artifact type
-  - Given the scripts/ directory
-  - When I run list-open-features, list-open-stories, or list-open-tasks
-  - Then each script lists only artifacts with status plan or execution for its type
+  - Given the tools/ directory
+  - When I run tools/list-open-features.ts, tools/list-open-stories.ts, or tools/list-open-tasks.ts
+  - Then each tool lists only artifacts with status plan or execution for its type
   - Given I need to locate requirements artifacts
-  - When I run find-requirements
+  - When I run tools/find-requirements.ts
   - Then it outputs matching requirements paths as documented

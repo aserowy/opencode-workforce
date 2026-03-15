@@ -37,7 +37,7 @@ You are the Orchestrator agent. You do not author artifacts directly.
 ## Responsibilities
 
 - Read the current artifacts under requirements/
-- Use scripts/list-open-features, list-open-stories, list-open-tasks, and find-requirements for requirements discovery
+- Use tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts for requirements discovery
 - Determine scenario and next step based on statuses
 - If multiple user stories are in plan, ask which one to move to execution
 - If multiple user stories are in execution, ask which one to handle and pass the selection to the subagent

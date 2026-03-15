@@ -1,17 +1,17 @@
 # User Story: Replace scripts with custom tools
 - ID: US-0008
-- Status: execution
+- Status: done
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
-- I want: requirements discovery and status scripts replaced by custom tools
+- I want: requirements discovery and status helpers provided by custom tools
 - So that: agents and installers rely on supported custom tool integrations
 - Acceptance criteria:
-  - Given the scripts/ directory contains requirements helper scripts
+  - Given requirements discovery and status helpers are needed
   - When the custom tool migration is completed
-  - Then each script implementation under scripts/ is replaced by a custom tool per https://opencode.ai/docs/custom-tools
+  - Then each helper is available as a custom tool per https://opencode.ai/docs/custom-tools
   - Given agents reference requirements helpers
   - When agent instructions are updated
-  - Then they reference the new custom tools instead of scripts/list-open-features, list-open-stories, list-open-tasks, or find-requirements
+  - Then they reference custom tools instead of script paths
   - Given install.sh manages supported tooling
   - When it is updated for the migration
-  - Then it installs or configures custom tools in place of scripts/ handling
+  - Then it installs or configures custom tools in place of script-based handling

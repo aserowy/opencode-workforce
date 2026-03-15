@@ -4,11 +4,11 @@
 - Status: done
 
 ## Description
-Confirm the updated guidance satisfies the US-0006 acceptance criteria and that references to the requirements discovery scripts are complete and accurate.
+Confirm the updated guidance satisfies the US-0006 acceptance criteria and that references to the requirements discovery tools are complete and accurate.
 
 ## Scope
 - Cross-check guidance updates against the story acceptance criteria.
-- Validate that all four scripts are referenced where required.
+- Validate that all four tools are referenced where required.
 - Identify any gaps or follow-up adjustments needed.
 
 ## Acceptance Criteria
@@ -16,7 +16,7 @@ Confirm the updated guidance satisfies the US-0006 acceptance criteria and that 
 - Any remaining gaps are documented with specific remediation steps.
 
 ## Verification Checklist
-- [x] Open work discovery guidance references scripts/list-open-features, list-open-stories, and list-open-tasks in agent Responsibilities.
-- [x] Artifact discovery guidance references scripts/find-requirements in agent Responsibilities.
+- [x] Open work discovery guidance references tools/list-open-features.ts, tools/list-open-stories.ts, and tools/list-open-tasks.ts in agent Responsibilities.
+- [x] Artifact discovery guidance references tools/find-requirements.ts in agent Responsibilities.
 - [x] References appear consistently across orchestrator, requestor, planner, and implementor guidance.
 - [x] No additional gaps identified.

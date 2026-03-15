@@ -1,17 +1,17 @@
-# User Story: Reference requirements scripts for agents
+# User Story: Reference requirements tools for agents
 - ID: US-0006
 - Status: done
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
-- I want: agents to reference scripts/list-open-features, list-open-stories, list-open-tasks, and find-requirements when working with requirements artifacts
+- I want: agents to reference tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts when working with requirements artifacts
 - So that: agents can discover open work and locate artifacts consistently
 - Acceptance criteria:
   - Given an agent needs open features, stories, or tasks
   - When it follows the story guidance
-  - Then it references the corresponding list-open-* script to obtain paths
+  - Then it references the corresponding list-open-* tool to obtain paths
   - Given an agent needs to locate specific requirements artifacts
   - When it follows the story guidance
-  - Then it references scripts/find-requirements with search terms
+  - Then it references tools/find-requirements.ts with search terms
   - Given agents are working with requirements artifacts
   - When they describe their approach
-  - Then they cite these scripts as the supported discovery mechanism
+  - Then they cite these tools as the supported discovery mechanism
