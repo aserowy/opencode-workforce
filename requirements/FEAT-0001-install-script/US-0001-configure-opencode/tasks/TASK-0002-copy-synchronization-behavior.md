@@ -1,7 +1,7 @@
 # Task: Specify copy/synchronization behavior
 
 - ID: TASK-0002
-- Status: plan
+- Status: done
 
 ## Description
 Define how install.sh synchronizes repository content to ~/.config/opencode, including handling of updates, removals, and idempotency verification.

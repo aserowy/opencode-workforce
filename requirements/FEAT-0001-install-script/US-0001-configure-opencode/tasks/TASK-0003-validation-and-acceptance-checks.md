@@ -1,7 +1,7 @@
 # Task: Define validation and acceptance checks
 
 - ID: TASK-0003
-- Status: plan
+- Status: done
 
 ## Description
 Outline the checks needed to verify install.sh meets acceptance criteria without requiring privileged operations.

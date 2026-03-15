@@ -1,6 +1,6 @@
 # User Story: Configure Opencode Config via install.sh
 - ID: US-0001
-- Status: execution
+- Status: done
 - Feature: FEAT-0001
 - As a: repository user
 - I want: a POSIX install.sh that configures ~/.config/opencode with this repo’s agents/skills/commands
