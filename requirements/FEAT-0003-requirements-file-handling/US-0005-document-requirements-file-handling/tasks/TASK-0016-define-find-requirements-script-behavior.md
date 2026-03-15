@@ -1,10 +1,43 @@
 # Task: Define find-requirements script behavior
 
 - ID: TASK-0016
-- Status: plan
+- Status: done
 
 ## Description
 Document expected behavior and output for the find-requirements script under scripts/.
+
+## Script Behavior
+### Inputs
+- Optional arguments: one or more search terms.
+- If no search terms are provided, the script returns all requirements paths.
+
+### Search Rules
+- The script searches within the `requirements/` directory.
+- Paths are matched if they contain **all** provided search terms (case-insensitive) in the path string.
+- Matching is applied to full relative paths (e.g., `requirements/FEAT-0003-.../US-0005-.../story.md`).
+
+### Output
+- Output is newline-delimited paths, relative to repository root.
+- Ordering is lexicographic (alphabetical) by output path.
+- Only requirement artifact files are returned: `feature.md`, `story.md`, and `tasks/TASK-*.md`.
+
+## Examples
+Find everything:
+```
+scripts/find-requirements
+requirements/FEAT-0003-requirements-file-handling/feature.md
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/story.md
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/tasks/TASK-0014-document-id-generation-rules.md
+```
+
+Find paths matching "US-0005":
+```
+scripts/find-requirements US-0005
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/story.md
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/tasks/TASK-0014-document-id-generation-rules.md
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/tasks/TASK-0015-define-open-listing-scripts-behavior.md
+requirements/FEAT-0003-requirements-file-handling/US-0005-document-requirements-file-handling/tasks/TASK-0016-define-find-requirements-script-behavior.md
+```
 
 ## Scope
 - Define supported inputs (if any), such as search terms or paths.

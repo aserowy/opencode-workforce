@@ -1,0 +1,30 @@
+#!/bin/sh
+set -eu
+
+root_dir="$(cd "$(dirname "$0")/.." && pwd)"
+requirements_dir="$root_dir/requirements"
+
+paths="$(find "$requirements_dir" -type f \( -name "feature.md" -o -name "story.md" -o -path "*/tasks/TASK-*.md" \) \
+  | sed "s#^$root_dir/##" \
+  | sort)"
+
+if [ "$#" -eq 0 ]; then
+  printf "%s\n" "$paths"
+  exit 0
+fi
+
+printf "%s\n" "$paths" | while IFS= read -r path; do
+  lower_path="$(printf "%s" "$path" | tr '[:upper:]' '[:lower:]')"
+  match=1
+  for term in "$@"; do
+    lower_term="$(printf "%s" "$term" | tr '[:upper:]' '[:lower:]')"
+    case "$lower_path" in
+      *"$lower_term"*) : ;;
+      *) match=0; break ;;
+    esac
+  done
+
+  if [ "$match" -eq 1 ]; then
+    printf "%s\n" "$path"
+  fi
+done
