@@ -1,6 +1,6 @@
 # Feature: Strict User Interaction Workflow
 - ID: FEAT-0002
-- Status: plan
+- Status: execution
 
 ## Description
 Define a stricter and more precise workflow for user interaction that clarifies intent, gates execution, and enforces commit sequencing between phases.

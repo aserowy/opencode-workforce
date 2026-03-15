@@ -1,6 +1,6 @@
 # User Story: Enforce Strict Interaction Gating
 - ID: US-0004
-- Status: plan
+- Status: execution
 - Feature: FEAT-0002
 - As a: workflow user
 - I want: a precise clarification and approval gate with commit sequencing between phases
