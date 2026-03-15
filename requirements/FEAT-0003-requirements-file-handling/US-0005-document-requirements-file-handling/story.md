@@ -1,6 +1,6 @@
 # User Story: Define Requirements ID Rules and Scripts
 - ID: US-0005
-- Status: plan
+- Status: execution
 - Feature: FEAT-0003
 - As a: requirements maintainer
 - I want: documented ID generation rules and scripts for listing open requirements artifacts
