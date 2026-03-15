@@ -9,7 +9,7 @@
   - Given install.sh is run in a fresh environment
     - When installation completes successfully
     - Then the scripts/ directory is installed and available for use
-    - And scripts/ are not installed into ~/.config/opencode/
+    - And scripts/ are installed into ~/.config/opencode/
   - Given install.sh is run multiple times
     - When it re-installs the project
     - Then including scripts/ does not require manual intervention

@@ -17,7 +17,7 @@ Confirm the planned install behavior for scripts/ satisfies the story acceptance
 
 ## Acceptance Criteria Mapping
 1. Given install.sh is run in a fresh environment / When installation completes successfully / Then the scripts/ directory is installed and available for use
-   - Mapped to: Add sync_dir invocation for scripts after prepare_config_root; sync_dir creates destination directory and copies contents when source exists.
+   - Mapped to: Add sync_dir invocation for scripts after prepare_config_root; sync_dir creates destination directory and copies contents when source exists under $dest_root (expected ~/.config/opencode/scripts).
    - Logging confirms scripts were processed.
 2. Given install.sh is run multiple times / When it re-installs the project / Then including scripts/ does not require manual intervention
    - Mapped to: Reuse sync_dir diff/cmp logic; identical items are skipped, updates are applied; no manual steps needed.

@@ -1,6 +1,6 @@
 # Feature: Requirements ID Rules and Requirements Scripts
 - ID: FEAT-0003
-- Status: done
+- Status: execution
 
 ## Description
 Define requirements ID generation rules (sequential by artifact type) and specify lightweight shell scripts under scripts/ to list open requirements artifacts and find requirements files.
