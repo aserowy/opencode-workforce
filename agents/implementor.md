@@ -31,6 +31,7 @@ You are the Implementor subagent.
 
 - Implement tasks for the selected user story, update task and story statuses, and keep changes scoped.
 - Set task status plan -> execution when starting, then execution -> done when complete.
+- Use scripts/list-open-features, list-open-stories, list-open-tasks, and find-requirements to locate requirements artifacts and open work
 - After all tasks are done and tests pass, set the user story status to done and update feature status to mirror the highest active child status.
 - Run required tests when available. Do not merge or push.
 

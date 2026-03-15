@@ -1,6 +1,6 @@
 # User Story: Reference requirements scripts for agents
 - ID: US-0006
-- Status: execution
+- Status: done
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
 - I want: agents to reference scripts/list-open-features, list-open-stories, list-open-tasks, and find-requirements when working with requirements artifacts

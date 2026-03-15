@@ -1,7 +1,7 @@
 # Task: Update agent guidance to reference requirements scripts
 
 - ID: TASK-0018
-- Status: plan
+- Status: done
 
 ## Description
 Update the identified agent guidance documents so they explicitly reference scripts/list-open-features, list-open-stories, list-open-tasks, and find-requirements as the supported discovery mechanism for requirements artifacts.

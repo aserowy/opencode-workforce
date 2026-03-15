@@ -1,7 +1,7 @@
 # Task: Verify story alignment and acceptance coverage
 
 - ID: TASK-0019
-- Status: plan
+- Status: done
 
 ## Description
 Confirm the updated guidance satisfies the US-0006 acceptance criteria and that references to the requirements discovery scripts are complete and accurate.
@@ -14,3 +14,9 @@ Confirm the updated guidance satisfies the US-0006 acceptance criteria and that 
 ## Acceptance Criteria
 - A checklist confirms each acceptance criterion is addressed by the guidance updates.
 - Any remaining gaps are documented with specific remediation steps.
+
+## Verification Checklist
+- [x] Open work discovery guidance references scripts/list-open-features, list-open-stories, and list-open-tasks in agent Responsibilities.
+- [x] Artifact discovery guidance references scripts/find-requirements in agent Responsibilities.
+- [x] References appear consistently across orchestrator, requestor, planner, and implementor guidance.
+- [x] No additional gaps identified.
