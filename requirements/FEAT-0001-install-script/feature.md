@@ -1,6 +1,6 @@
 # Feature: Install Script for Opencode Config
 - ID: FEAT-0001
-- Status: done
+- Status: execution
 
 ## Description
 Provide a POSIX `install.sh` script that configures `~/.config/opencode` by creating or updating agents, skills, and commands from this repository.
