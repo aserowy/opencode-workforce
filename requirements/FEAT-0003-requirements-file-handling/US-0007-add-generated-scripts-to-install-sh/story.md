@@ -1,14 +1,14 @@
-# User Story: Install generated scripts directory
+# User Story: Install scripts directory
 - ID: US-0007
-- Status: plan
+- Status: done
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
-- I want: generated scripts/ to be included by install.sh
+- I want: scripts/ to be included by install.sh
 - So that: required scripts are available after installation without manual steps
 - Acceptance criteria:
   - Given install.sh is run in a fresh environment
   - When installation completes successfully
-  - Then the generated scripts/ directory is installed and available for use
+- Then the scripts/ directory is installed and available for use
   - Given install.sh is run multiple times
   - When it re-installs the project
-  - Then including generated scripts/ does not require manual intervention
+- Then including scripts/ does not require manual intervention
