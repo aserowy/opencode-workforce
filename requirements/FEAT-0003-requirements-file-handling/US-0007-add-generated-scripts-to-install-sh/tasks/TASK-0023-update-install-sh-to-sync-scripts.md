@@ -1,7 +1,7 @@
 # Task: Update install.sh to sync scripts into config root
 
 - ID: TASK-0023
-- Status: plan
+- Status: done
 
 ## Description
 Implement the install.sh change to include the scripts/ directory in the installation flow so it is copied into the config root (~/.config/opencode).

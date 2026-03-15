@@ -52,6 +52,10 @@ commands_created=0
 commands_updated=0
 commands_skipped=0
 
+scripts_created=0
+scripts_updated=0
+scripts_skipped=0
+
 prepare_config_root() {
   log_info "Preparing configuration directory"
   if [ -e "$dest_root" ] && [ ! -d "$dest_root" ]; then
@@ -159,11 +163,13 @@ prepare_config_root
 sync_dir "$repo_root/agents" "agents" "agents" "agents_created" "agents_updated" "agents_skipped"
 sync_dir "$repo_root/skills" "skills" "skills" "skills_created" "skills_updated" "skills_skipped"
 sync_dir "$repo_root/commands" "commands" "commands" "commands_created" "commands_updated" "commands_skipped"
+sync_dir "$repo_root/scripts" "scripts" "scripts" "scripts_created" "scripts_updated" "scripts_skipped"
 
 log_section "==> Summary"
 printf '%s\n' "  Base config: created $base_created, updated $base_updated, skipped $base_skipped"
 printf '%s\n' "  Agents:     created $agents_created, updated $agents_updated, skipped $agents_skipped"
 printf '%s\n' "  Skills:     created $skills_created, updated $skills_updated, skipped $skills_skipped"
 printf '%s\n' "  Commands:   created $commands_created, updated $commands_updated, skipped $commands_skipped"
+printf '%s\n' "  Scripts:    created $scripts_created, updated $scripts_updated, skipped $scripts_skipped"
 printf '%s\n' "  Totals:     created $created_total, updated $updated_total, skipped $skipped_total"
 printf '\n%s\n' "opencode config installed to $dest_root"

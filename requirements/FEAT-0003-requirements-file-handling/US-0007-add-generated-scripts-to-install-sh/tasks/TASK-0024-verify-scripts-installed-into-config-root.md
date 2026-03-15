@@ -1,7 +1,7 @@
 # Task: Verify scripts are installed into ~/.config/opencode
 
 - ID: TASK-0024
-- Status: plan
+- Status: done
 
 ## Description
 Validate that the updated install.sh places scripts/ under ~/.config/opencode and behaves idempotently on repeated runs.

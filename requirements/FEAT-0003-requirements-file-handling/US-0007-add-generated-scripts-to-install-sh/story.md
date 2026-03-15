@@ -1,6 +1,6 @@
 # User Story: Install scripts directory
 - ID: US-0007
-- Status: execution
+- Status: done
 - Feature: FEAT-0003
 - As a: workflow/agent maintainer
 - I want: scripts/ to be included by install.sh
@@ -13,6 +13,3 @@
   - Given install.sh is run multiple times
     - When it re-installs the project
     - Then including scripts/ does not require manual intervention
-
-- Current gap:
-  - Scripts are not installed into ~/.config/opencode/ today.
