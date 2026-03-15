@@ -1,7 +1,7 @@
 # Task: Define summary counts and reporting rules
 
 - ID: TASK-0008
-- Status: plan
+- Status: done
 
 ## Description
 Specify how install.sh should compute and report end-of-run summary counts for created, updated, and skipped items, including what qualifies for each category.

@@ -1,7 +1,7 @@
 # Task: Specify output formatting for readability
 
 - ID: TASK-0009
-- Status: plan
+- Status: done
 
 ## Description
 Define the formatting conventions for progress output and the end-of-run summary to ensure readability in plain-text terminals using POSIX sh.

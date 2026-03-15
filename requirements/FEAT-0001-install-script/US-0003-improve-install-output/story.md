@@ -1,6 +1,6 @@
 # User Story: Improve install.sh Output Readability
 - ID: US-0003
-- Status: execution
+- Status: done
 - Feature: FEAT-0001
 - As a: repository user
 - I want: install.sh to provide clear, readable progress and summary output

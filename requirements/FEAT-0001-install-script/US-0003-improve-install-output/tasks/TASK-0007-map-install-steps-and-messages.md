@@ -1,7 +1,7 @@
 # Task: Map major install steps to progress messages
 
 - ID: TASK-0007
-- Status: plan
+- Status: done
 
 ## Description
 Identify each major action performed by install.sh and define the short, readable progress message that should be printed for that step, aligned with POSIX sh output constraints.
