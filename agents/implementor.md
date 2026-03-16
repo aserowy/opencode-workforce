@@ -2,14 +2,14 @@
 description: Implementor subagent that executes tasks and updates statuses
 mode: subagent
 tools:
-  write: true
-  edit: true
   apply_patch: true
   bash: true
-  read: true
+  edit: true
   glob: true
   grep: true
-  webfetch: false
+  read: true
+  requirements: true
+  write: true
 permission:
   bash:
     "*": ask
@@ -34,6 +34,7 @@ You are the Implementor subagent.
 - Use tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts to locate requirements artifacts and open work
 - After all tasks are done and tests pass, set the user story status to done and update feature status to mirror the highest active child status.
 - Run required tests when available. Do not merge or push.
+- Do NOT edit any other files under requirements/.
 
 ## Artifact Structure
 

@@ -10,6 +10,7 @@ tools:
   glob: true
   grep: true
   webfetch: false
+  requirements: true
 permission:
   edit: ask
   write: ask

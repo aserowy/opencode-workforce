@@ -2,16 +2,9 @@
 description: Orchestrates RE -> planning -> implementation with artifacts and approval gates
 mode: primary
 tools:
-  write: false
-  edit: false
-  apply_patch: false
-  bash: true
-  read: true
-  glob: true
-  grep: true
-  question: true
-  webfetch: false
+  requirements: true
   task: true
+  question: true
 permission:
   bash:
     "*": ask
@@ -25,9 +18,9 @@ permission:
     "git push *": deny
   task:
     "*": ask
-    "requestor": allow
-    "planner": allow
     "implementor": allow
+    "planner": allow
+    "requestor": allow
 ---
 
 ## Role
@@ -96,7 +89,7 @@ echo "tasks present"
 
 ### Approval Gate
 
-- Ask "Transition to phase \<phase\>" next?" with question tool.
+- Ask "Transition to phase \<phase\> next?" with question tool.
     - \<phase\> is replaced by `Requirements`, `Planning`, or `Implementation`.
     - Possible answers are `yes` or `no`.
 - If approval is rejected, ask which step to repeat: Requirements, Planning, Implementation
