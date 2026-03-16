@@ -17,16 +17,27 @@ Use this exact structure:
 
 ```md
 # User Story: <Short Title>
+
+## Metadata
+
 - ID: US-####
 - Status: plan
 - Feature: FEAT-####
 - As a: <role>
-- I want: <capability>
-- So that: <benefit>
-- Acceptance criteria:
-  - Given <context>
-  - When <action>
-  - Then <outcome>
+
+## Capability
+
+I want: <capability>
+
+## Benefit
+
+So that: <benefit>
+
+## Acceptance Criteria
+
+- Given <context>
+- When <action>
+- Then <outcome>
 ```
 
 ## INVEST Checklist
@@ -54,30 +65,52 @@ Validate each user story against all criteria below. If any fail, revise and re-
 
 ```md
 # User Story: Filter User Stories By Status
+
+## Metadata
+
 - ID: US-0002
 - Status: plan
 - Feature: FEAT-0001
 - As a: requirements engineer
-- I want: to filter user stories by status
-- So that: I can quickly find items ready for planning
-- Acceptance criteria:
-  - Given multiple user stories with different statuses
-  - When I filter by status "plan"
-  - Then only user stories with status "plan" are shown
+
+## Capability
+
+I want: to filter user stories by status
+
+## Benefit
+
+So that: I can quickly find items ready for planning
+
+## Acceptance Criteria
+
+- Given multiple user stories with different statuses
+- When I filter by status "plan"
+- Then only user stories with status "plan" are shown
 ```
 
 ### Bad
 
 ```md
 # User Story: Improve Workflow
+
+## Metadata
+
 - ID: US-0003
 - Status: plan
 - Feature: FEAT-0001
 - As a: user
-- I want: better workflows
-- So that: things are easier
-- Acceptance criteria:
-  - Given a workflow
-  - When I use it
-  - Then it is better
+
+## Capability
+
+I want: better workflows
+
+## Benefit
+
+So that: things are easier
+
+## Acceptance Criteria
+
+- Given a workflow
+- When I use it
+- Then it is better
 ```

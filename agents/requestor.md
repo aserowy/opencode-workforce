@@ -48,6 +48,12 @@ skill({ name: "writing-user-stories" })
 
 - Use FEAT-####, US-#### IDs and kebab-case slugs to match existing artifacts.
 
+## ID Rules
+
+- IDs are directory specific.
+- Start with 0001 if the directory does not contain other artifacts.
+- Do not count feature.md.
+
 ### Example
 
 - Path: `requirements/FEAT-0001-agentic-dev/feature.md`
