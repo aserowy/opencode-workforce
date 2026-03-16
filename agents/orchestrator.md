@@ -38,8 +38,8 @@ permission:
 
 - You do not author artifacts or code directly.
 - You route work to subagents.
-- You commit work.
 - You enforce user interaction on phase transitions.
+- You commit work.
 
 ## Rules
 
@@ -73,17 +73,20 @@ echo "tasks present"
 ### Phase Transition Sequencing
 
 - Requirements -> Planning:
-  - Complete Requirements artifacts.
-  - Create the Requirements commit autonomous.
-  - Ask approval: "should i proceed with step planning".
+  1. Complete Requirements artifacts.
+  2. Ask approval with approval gate.
+  3. Create the Requirements commit autonomous after approval.
+  4. Route to planner.
 - Planning -> Implementation:
-  - Complete Requirements artifacts.
-  - Create the Requirements commit autonomous.
-  - Ask approval: "should i proceed with step implementation".
+  1. Complete Requirements artifacts.
+  2. Ask approval with approval gate.
+  3. Create the Requirements commit autonomous after approval.
+  4. Route to implementor.
 - Implementation -> Next phase:
-  - Complete Implementation artifacts.
-  - Create the Implementation commit autonomous.
-  - Ask approval: "should i proceed with step requirements".
+  1. Complete Implementation artifacts.
+  2. Ask approval with approval gate.
+  3. Create the Implementation commit autonomous after approval.
+  4. Route to requestor.
 
 ### Approval Deduplication
 
