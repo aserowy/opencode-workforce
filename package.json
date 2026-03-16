@@ -1,0 +1,7 @@
+{
+  "name": "opencode-workforce",
+  "private": true,
+  "scripts": {
+    "test": "bun test"
+  }
+}
