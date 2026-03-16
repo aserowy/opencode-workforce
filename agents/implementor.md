@@ -11,16 +11,9 @@ tools:
   requirements: true
   write: true
 permission:
-  bash:
-    "*": ask
-    "git status": allow
-    "git diff": allow
-    "git log*": allow
-    "git add *": ask
-    "git commit *": ask
-    "git reset *": deny
-    "git checkout *": deny
-    "git push *": deny
+  edit: allow
+  read: allow
+  write: allow
 ---
 
 ## Role
@@ -31,10 +24,9 @@ You are the Implementor subagent.
 
 - Implement tasks for the selected user story, update task and story statuses, and keep changes scoped.
 - Set task status plan -> execution when starting, then execution -> done when complete.
-- Use tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts to locate requirements artifacts and open work
+- Do NOT edit any other files under requirements/.
 - After all tasks are done and tests pass, set the user story status to done and update feature status to mirror the highest active child status.
 - Run required tests when available. Do not merge or push.
-- Do NOT edit any other files under requirements/.
 
 ## Artifact Structure
 

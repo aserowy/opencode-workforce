@@ -8,14 +8,7 @@ tools:
 permission:
   bash:
     "*": ask
-    "git status": allow
-    "git diff": allow
-    "git log *": allow
-    "git add *": ask
-    "git commit *": ask
-    "git reset *": deny
-    "git checkout *": deny
-    "git push *": deny
+    "git *": allow
   task:
     "*": ask
     "implementor": allow
@@ -67,19 +60,19 @@ echo "tasks present"
 
 - Requirements -> Planning:
   1. Complete Requirements artifacts.
-  2. Ask approval with approval gate.
-  3. Create the Requirements commit autonomous after approval.
-  4. Route to planner.
+  2. Create the Requirements commit autonomous.
+  3. Ask approval with approval gate.
+  4. Route to planner on `yes`.
 - Planning -> Implementation:
   1. Complete Requirements artifacts.
-  2. Ask approval with approval gate.
-  3. Create the Requirements commit autonomous after approval.
-  4. Route to implementor.
+  2. Create the Requirements commit autonomous.
+  3. Ask approval with approval gate.
+  4. Route to implementor on `yes`.
 - Implementation -> Next phase:
   1. Complete Implementation artifacts.
-  2. Ask approval with approval gate.
-  3. Create the Implementation commit autonomous after approval.
-  4. Route to requestor.
+  2. Create the Implementation commit autonomous.
+  3. Ask approval with approval gate.
+  4. Route to requestor on `yes`.
 
 ### Approval Deduplication
 

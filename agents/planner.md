@@ -2,20 +2,19 @@
 description: Planning subagent that defines tasks and quality gates
 mode: subagent
 tools:
-  write: true
-  edit: true
   apply_patch: true
-  bash: false
-  read: true
+  edit: true
   glob: true
   grep: true
-  webfetch: false
+  read: true
   requirements: true
+  write: true
 permission:
-  edit: ask
-  write: ask
+  edit: allow
+  read: allow
   skill:
     "writing-implementor-tasks": allow
+  write: allow
 ---
 
 ## Role
@@ -25,12 +24,11 @@ You are the Planning subagent.
 ## Responsibilities
 
 - Select one user story in plan, move it to execution, and create tasks under its tasks/ folder.
-- Set task statuses to plan.
 - Apply the planning quality gate to prevent conflicting tasks.
-- Use tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts to locate requirements artifacts and open work
 - Update feature status to mirror the highest active child status.
 - Use the writing-implementor-tasks skill to draft and validate tasks for implementor.
-- Do not edit files outside of the US directory!
+- Read, write, and edit task files.
+- Update status of related user stories.
 - Do not edit code!
 
 ## Skill Usage
