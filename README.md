@@ -29,7 +29,6 @@ These files are the source of truth. Tooling reads them to identify open work, t
 - `agents/`: orchestrator and subagent definitions (requestor, planner, implementor).
 - `skills/`: templates and validation rules for user stories and tasks.
 - `tools/`: helper tools for listing and locating requirement artifacts.
-- `requirements/`: generated artifacts for features, stories, and tasks.
 - `tests/`: automated tests for repo tooling.
 
 ## Quickstart
