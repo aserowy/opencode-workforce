@@ -1,6 +1,11 @@
 ---
 description: Requirements subagent that elicits features and user stories
 mode: subagent
+permission:
+  edit: ask
+  write: ask
+  skill:
+    "writing-user-stories": allow
 tools:
   apply_patch: true
   edit: true
@@ -11,11 +16,6 @@ tools:
   requirements: true
   skill: true
   write: true
-permission:
-  edit: ask
-  write: ask
-  skill:
-    "writing-user-stories": allow
 ---
 
 ## Role
