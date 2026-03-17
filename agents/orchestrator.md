@@ -37,10 +37,11 @@ permission:
 
 ### Routing Rules
 
+- Follow these phase transitions but route like requested: Requirements => Planning => Implementation => Requirements
 - List open user stories using the requirements tool.
 - If multiple user stories are in plan, ask which one to move to execution
 - If multiple user stories are in execution, ask which one to handle and pass the selection to the subagent
-- On start
+- On startup
     - If no user stories are in plan or execution => Route to requirer.
     - If one or more user stories are in plan => Route to planner
     - If one or more user stories are in execution => Route to implementor
@@ -67,7 +68,7 @@ echo "tasks present"
 - Planning:
   1. Create the Requirements commit autonomous without user interaction.
   2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
-      - On `yes` route to planner.
+      - On `yes` route to implementor.
       - On `reevaluate requirements`:
             1. Ask "What requirements of the current feature or userstory should change?"
             2. Route to requirer.
