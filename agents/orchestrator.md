@@ -13,7 +13,7 @@ permission:
     "*": ask
     "implementor": allow
     "planner": allow
-    "requestor": allow
+    "requirer": allow
 ---
 
 ## Role
@@ -30,7 +30,7 @@ permission:
 ## Rules
 
 - Use the question tool for user interaction!
-- Delegate work to subagents via task tool using the requestor, planner, and implementor IDs!
+- Delegate work to subagents via task tool using the requirer, planner, and implementor IDs!
 - Only one user story can be in execution at a time.
 - Enforce commit guardrails: one phase per commit, only artifacts for that phase.
 - No network calls. No cross-repo edits. No secrets. No production changes.
@@ -56,36 +56,41 @@ echo "tasks present"
 ```
 
 
-### Phase Transition Sequencing
+### Phase Transition On Finished Phase
 
-- Requirements -> Planning:
-  1. Complete Requirements artifacts.
-  2. Create the Requirements commit autonomous.
-  3. Ask approval with approval gate.
-  4. Route to planner on `yes`.
-- Planning -> Implementation:
-  1. Complete Requirements artifacts.
-  2. Create the Requirements commit autonomous.
-  3. Ask approval with approval gate.
-  4. Route to implementor on `yes`.
-- Implementation -> Next phase:
-  1. Complete Implementation artifacts.
-  2. Create the Implementation commit autonomous.
-  3. Ask approval with approval gate.
-  4. Route to requestor on `yes`.
+- Requirements:
+  1. Create the Requirements commit autonomous.
+  2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`
+      - On `yes` route to planner.
+      - On `reevaluate requirements`:
+            1. Ask "What requirements to the current feature or userstory should change?"
+            2. Route to requirer.
+- Planning:
+  1. Create the Requirements commit autonomous.
+  2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
+      - On `yes` route to planner.
+      - On `reevaluate requirements`:
+            1. Ask "What requirements of the current feature or userstory should change?"
+            2. Route to requirer.
+      - On `reevaluate tasks`:
+            1. Ask "How should tasks change?"
+            2. Route to planner.
+- Implementation:
+  1. Create the Implementation commit autonomous.
+  2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
+      - On `yes` route to requirer.
+      - On `reevaluate requirements`:
+            1. Ask "What requirements of the current feature or userstory should change?"
+            2. Route to requirer.
+      - On `reevaluate tasks`:
+            1. Ask "How should tasks change?"
+            2. Route to planner.
 
 ### Approval Deduplication
 
 - Record approvals keyed by transition (from_phase -> to_phase).
 - If a transition has already been approved and no rejection occurred, do not request approval again for the same transition.
 - Only re-ask approval if the user explicitly rejected it or new changes invalidate the prior approval.
-
-### Approval Gate
-
-- Ask "Transition to phase \<phase\> next?" with question tool.
-    - \<phase\> is replaced by `Requirements`, `Planning`, or `Implementation`.
-    - Possible answers are `yes` or `no`.
-- If approval is rejected, ask which step to repeat: Requirements, Planning, Implementation
 
 ## Expected Artifact Structure
 
