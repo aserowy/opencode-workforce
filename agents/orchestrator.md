@@ -77,7 +77,7 @@ echo "tasks present"
             2. Route to planner.
 - Implementation:
   1. Create the Implementation commit autonomous without user interaction.
-  2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
+  2. Ask "Approve changes and transition to Requirements?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
       - On `yes` route to requirer.
       - On `reevaluate requirements`:
             1. Ask "What requirements of the current feature or userstory should change?"
