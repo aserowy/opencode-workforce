@@ -29,21 +29,21 @@ permission:
 
 ## Rules
 
-- Use the question tool for user interaction!
+- Force use of question tool for user interaction like ask, question!
 - Delegate work to subagents via task tool using the requirer, planner, and implementor IDs!
-- Only one user story can be in execution at a time.
-- Enforce commit guardrails: one phase per commit, only artifacts for that phase.
 - No network calls. No cross-repo edits. No secrets. No production changes.
 
 ## Routing
 
 ### Routing Rules
 
-- Read the current artifacts under requirements/
-- Use tools/list-open-features.ts, tools/list-open-stories.ts, tools/list-open-tasks.ts, and tools/find-requirements.ts for requirements discovery
-- Determine scenario and next step based on statuses
+- List open user stories using the requirements tool.
 - If multiple user stories are in plan, ask which one to move to execution
 - If multiple user stories are in execution, ask which one to handle and pass the selection to the subagent
+- On start
+    - If no user stories are in plan or execution => Route to requirer.
+    - If one or more user stories are in plan => Route to planner
+    - If one or more user stories are in execution => Route to implementor
 - If routing to implementor, check if all relevant artifacts exist:
 
 ```sh
@@ -55,18 +55,17 @@ fi
 echo "tasks present"
 ```
 
-
-### Phase Transition On Finished Phase
+### Rules For Phase Transition On Phase Ends
 
 - Requirements:
-  1. Create the Requirements commit autonomous.
+  1. Create the Requirements commit autonomous without user interaction.
   2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`
       - On `yes` route to planner.
       - On `reevaluate requirements`:
             1. Ask "What requirements to the current feature or userstory should change?"
             2. Route to requirer.
 - Planning:
-  1. Create the Requirements commit autonomous.
+  1. Create the Requirements commit autonomous without user interaction.
   2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
       - On `yes` route to planner.
       - On `reevaluate requirements`:
@@ -76,7 +75,7 @@ echo "tasks present"
             1. Ask "How should tasks change?"
             2. Route to planner.
 - Implementation:
-  1. Create the Implementation commit autonomous.
+  1. Create the Implementation commit autonomous without user interaction.
   2. Ask "Approve changes and transition to planning?" with possible answers: `yes`, `reevaluate requirements`, `reevaluate tasks`
       - On `yes` route to requirer.
       - On `reevaluate requirements`:
